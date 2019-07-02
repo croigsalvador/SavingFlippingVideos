@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-struct AVAuthorizer: Authorizer {
+struct AVAuthorizer {
 
   fileprivate let device: String
   
@@ -17,10 +17,10 @@ struct AVAuthorizer: Authorizer {
     self.device = device
   }
 
-  internal static func createHandler(_ device: String, handler: @escaping (AuthorizationStatus) -> Void)
+  internal static func createHandler(_ device: String, handler: @escaping (AVAuthorizationStatus) -> Void)
     -> ((Bool) -> Void) {
       return { granted in
-        var status = AuthorizationStatus.notDetermined
+        var status = AVAuthorizationStatus.notDetermined
         switch granted {
         case true:
           status = .authorized
@@ -35,17 +35,15 @@ struct AVAuthorizer: Authorizer {
   }
 
   // MARK: Authorizer
-    @discardableResult
-  func authorizationStatus() -> AuthorizationStatus {
+ @discardableResult
+  func authorizationStatus() -> AVAuthorizationStatus {
         let status = AVCaptureDevice.authorizationStatus(for: AVMediaType(rawValue: device))
-            .map()
     return status
   }
 
-  func requestAuthorization(_ fromHandler: @escaping (AuthorizationStatus)
+  func requestAuthorization(_ fromHandler: @escaping (AVAuthorizationStatus)
     -> Void) {
     let type = device as String == AVMediaType.video.rawValue ? "camera" : "microphone"
-    EventTracker.track(event: NewEvent.init("permission_show", ["type":type], section: ""))
     let requestHandler = AVAuthorizer.createHandler(device, handler: fromHandler)
     AVCaptureDevice.requestAccess(for: AVMediaType(rawValue: device),
         completionHandler:requestHandler)
@@ -54,12 +52,12 @@ struct AVAuthorizer: Authorizer {
   // MARK: Factory
 
   /// Returns camera authorizer
-  internal static func camera() -> Authorizer {
+  internal static func camera() -> AVAuthorizer {
     return AVAuthorizer(device: AVMediaType.video.rawValue)
   }
 
   /// Returns microphone authorizer
-  internal static func microphone() -> Authorizer {
+  internal static func microphone() -> AVAuthorizer {
     return AVAuthorizer(device: AVMediaType.audio.rawValue)
   }
 }

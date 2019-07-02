@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
-import GPUImage
+//import GPUImage
 
 
 class BaseCameraViewController: UIViewController {
@@ -17,28 +17,14 @@ class BaseCameraViewController: UIViewController {
     var presenter: CameraPresenter!
     var previewView: CameraPreviewView!
 
-    lazy var renderView: RenderView = {
-        return RenderView(frame: previewView.bounds)
-    }()
+//    lazy var renderView: RenderView = {
+//        return RenderView(frame: previewView.bounds)
+//    }()
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-//    lazy var preview: CameraPreviewView = {
-//        let preview = CameraPreviewView(frame: self.view.bounds)
-//        view.insertSubview(preview, at: 0)
-//        return preview
-//    }()
-
-    var loading = false {
-        didSet {
-            // Remove Loading
-            if loading {
-                // Show loading
-            }
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,9 +60,6 @@ class BaseCameraViewController: UIViewController {
         presenter?.switchCamera()
     }
     
-    @objc fileprivate func zoomGesture(pinch: UIPinchGestureRecognizer) {
-        presenter?.pinchZoom(pinch.scale)
-    }
 }
 
 

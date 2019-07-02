@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 import UIKit
-import GPUImage
+//import GPUImage
 
 protocol CameraPresenterProtocol: PresenterProtocol {
 
@@ -17,13 +17,12 @@ protocol CameraPresenterProtocol: PresenterProtocol {
     func startRecording()
     func stopRecording()
     func switchCamera()
-    func torch()
     func closeCamera()
 }
 
 protocol CameraPresenterView: class {
 
     var presenter: CameraPresenter! { get set }
-    var renderView: RenderView { get }
+//    var renderView: RenderView { get }
     func preview(session: AVCaptureSession?)
 }

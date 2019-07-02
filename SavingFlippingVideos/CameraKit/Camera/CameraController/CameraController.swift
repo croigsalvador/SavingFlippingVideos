@@ -104,7 +104,7 @@ extension CameraController {
     
     func finishRecording(completion: @escaping (URL?) -> Void) {
         
-        guard videoUrls.isNotEmpty else {
+        guard !videoUrls.isEmpty else {
             completion(nil)
             return
         }

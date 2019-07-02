@@ -7,36 +7,27 @@
 //
 
 import Foundation
-import CoreLocation
+import AVFoundation
 
 struct CameraPermissions {
-    let permissions: Permissions
-    let locationAuthorizer: CLAuthorizer
-    
-    init(_ permissions: Permissions = Permissions()) {
-        self.permissions        = permissions
-    }
-}
-
-extension CameraPermissions {
     
     var canSaveVideo: Bool {
-        return canAccessCamera == .authorized && canAcccessMicro == .authorized
+        return cameraAuthorizationStatus == .authorized && microAuthorizationStatus == .authorized
     }
 
-    var canAccessCamera: AuthorizationStatus {
+    var cameraAuthorizationStatus: AVAuthorizationStatus {
         return AVAuthorizer.camera().authorizationStatus()
     }
     
-    var canAcccessMicro: AuthorizationStatus {
+    var microAuthorizationStatus: AVAuthorizationStatus {
         return AVAuthorizer.microphone().authorizationStatus()
     }
     
-    func requestCameraPermissions(_ handler: @escaping (AuthorizationStatus) -> Void) {
+    func requestCameraPermissions(_ handler: @escaping (AVAuthorizationStatus) -> Void) {
         AVAuthorizer.camera().requestAuthorization(handler)
     }
     
-    func requestMicroPermissions(_ handler: @escaping (AuthorizationStatus) -> Void) {
+    func requestMicroPermissions(_ handler: @escaping (AVAuthorizationStatus) -> Void) {
         AVAuthorizer.microphone().requestAuthorization(handler)
     }
 }

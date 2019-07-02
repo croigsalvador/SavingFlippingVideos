@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aXG-TJ-kyd">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="AZO-XK-krJ">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" id="aXG-TJ-kyd" customClass="CameraViewController" customModule="SavingFlippingVideos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LkY-Po-Rhm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeV-pg-Td2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0b-AY-0eb">
+                                        <rect key="frame" x="162" y="576" width="90" height="95"/>
+                                        <color key="backgroundColor" red="0.69220703120000004" green="0.1114146292" blue="0.1721043626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="95" id="SaF-dJ-6Z0"/>
+                                            <constraint firstAttribute="width" constant="90" id="WoX-hj-iwV"/>
+                                        </constraints>
+                                        <state key="normal" image="rec_btn"/>
+                                        <connections>
+                                            <action selector="recordButtonTouchDown:" destination="aXG-TJ-kyd" eventType="touchDown" id="oiv-v3-btq"/>
+                                            <action selector="recordButtonTouchUp:" destination="aXG-TJ-kyd" eventType="touchUpInside" id="cgD-Kt-SdY"/>
+                                            <action selector="recordButtonTouchUpOutside:" destination="aXG-TJ-kyd" eventType="touchUpOutside" id="cg1-xB-imQ"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4d-f2-Kf2">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDY-Dm-geM">
+                                                <rect key="frame" x="364" y="5" width="50" height="50"/>
+                                                <color key="backgroundColor" red="0.69220703120000004" green="0.1114146292" blue="0.1721043626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="PxK-vd-vNX"/>
+                                                    <constraint firstAttribute="width" constant="50" id="qEh-t8-A5T"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="close_white"/>
+                                                <connections>
+                                                    <action selector="closeButtonPressed:" destination="aXG-TJ-kyd" eventType="touchUpInside" id="zG1-Ro-9NH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="eDY-Dm-geM" secondAttribute="trailing" id="CJY-Q3-oZs"/>
+                                            <constraint firstAttribute="height" constant="50" id="PaP-P2-Sas"/>
+                                            <constraint firstItem="eDY-Dm-geM" firstAttribute="top" secondItem="v4d-f2-Kf2" secondAttribute="top" constant="5" id="lkh-wc-At0"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="k0b-AY-0eb" secondAttribute="bottom" constant="65" id="56w-Ww-Rgp"/>
+                                    <constraint firstItem="v4d-f2-Kf2" firstAttribute="leading" secondItem="XeV-pg-Td2" secondAttribute="leading" id="9oM-Eq-eKp"/>
+                                    <constraint firstItem="v4d-f2-Kf2" firstAttribute="top" secondItem="XeV-pg-Td2" secondAttribute="top" id="LBV-Eu-DGr"/>
+                                    <constraint firstItem="k0b-AY-0eb" firstAttribute="centerX" secondItem="XeV-pg-Td2" secondAttribute="centerX" id="S0l-B1-BcU"/>
+                                    <constraint firstAttribute="trailing" secondItem="v4d-f2-Kf2" secondAttribute="trailing" id="llU-0C-zCO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="BfF-he-Gp7" firstAttribute="trailing" secondItem="XeV-pg-Td2" secondAttribute="trailing" id="6vc-w7-m9c"/>
+                            <constraint firstAttribute="bottom" secondItem="XeV-pg-Td2" secondAttribute="bottom" id="7eR-9V-XNJ"/>
+                            <constraint firstItem="XeV-pg-Td2" firstAttribute="top" secondItem="LkY-Po-Rhm" secondAttribute="top" id="TNm-FK-3cE"/>
+                            <constraint firstItem="XeV-pg-Td2" firstAttribute="leading" secondItem="BfF-he-Gp7" secondAttribute="leading" id="XEp-Qf-NNz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BfF-he-Gp7"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qf8-Kp-yS6" appends="YES" id="X2B-pW-YXc"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qtd-Aw-ula"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="bottomContainerConstraint" destination="7eR-9V-XNJ" id="h7H-bf-fmz"/>
+                        <outlet property="closeButton" destination="eDY-Dm-geM" id="P8p-Oj-wqe"/>
+                        <outlet property="previewContainer" destination="XeV-pg-Td2" id="Nz1-CU-tjv"/>
+                        <outlet property="recordButton" destination="k0b-AY-0eb" id="Hi8-VU-sZH"/>
+                        <outlet property="topButtonsContainer" destination="v4d-f2-Kf2" id="MzL-no-Tpb"/>
+                        <outlet property="topContainerConstraint" destination="TNm-FK-3cE" id="HCy-gg-MgD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hsb-Be-Dg3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="qf8-Kp-yS6">
+                    <connections>
+                        <action selector="swipeDownGestureRecognizer:" destination="aXG-TJ-kyd" id="AoW-X6-9fm"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="531.8840579710145" y="-8.9673913043478262"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KjS-U1-oh7">
+            <objects>
+                <viewController id="i6S-ec-l4t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2I0-2G-8VT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sb7-71-JbK">
+                                <rect key="frame" x="162" y="585" width="90" height="95"/>
+                                <color key="backgroundColor" red="0.69220703120000004" green="0.1114146292" blue="0.1721043626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="5bf-GW-aH9"/>
+                                    <constraint firstAttribute="width" constant="90" id="LPx-VS-hpG"/>
+                                </constraints>
+                                <state key="normal" image="rec_btn"/>
+                                <connections>
+                                    <action selector="recordButtonTouchDown:" destination="aXG-TJ-kyd" eventType="touchDown" id="bej-tI-w0X"/>
+                                    <action selector="recordButtonTouchUp:" destination="aXG-TJ-kyd" eventType="touchUpInside" id="BFh-d0-C0s"/>
+                                    <action selector="recordButtonTouchUpOutside:" destination="aXG-TJ-kyd" eventType="touchUpOutside" id="dEH-A1-K9a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sb7-71-JbK" firstAttribute="centerX" secondItem="rCx-Q3-qiC" secondAttribute="centerX" id="8mt-ey-oM1"/>
+                            <constraint firstItem="rCx-Q3-qiC" firstAttribute="bottom" secondItem="Sb7-71-JbK" secondAttribute="bottom" constant="56" id="h9Q-vq-UJw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rCx-Q3-qiC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJa-9z-il7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="-7"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close_white" width="20" height="20"/>
+        <image name="rec_btn" width="90" height="95"/>
+    </resources>
+</document>

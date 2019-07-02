@@ -49,13 +49,13 @@ class VideoWriter : NSObject {
             }
             
             if isVideoFirstFrame {
-                if fileWriter.status == AVAssetWriterStatus.unknown {
+                if fileWriter.status == AVAssetWriter.Status.unknown {
                     let startTime = CMSampleBufferGetPresentationTimeStamp(sample)
                     self.startTime = Date()
                     fileWriter.startWriting()
                     fileWriter.startSession(atSourceTime: startTime)
                 }
-                if fileWriter.status == AVAssetWriterStatus.failed {
+                if fileWriter.status == AVAssetWriter.Status.failed {
                     return
                 }
                 if isVideo {

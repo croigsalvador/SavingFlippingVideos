@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0F5C17FE22CBFC4E0085DB06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C17FD22CBFC4E0085DB06 /* AppDelegate.swift */; };
-		0F5C180322CBFC4E0085DB06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C180122CBFC4E0085DB06 /* Main.storyboard */; };
 		0F5C180522CBFC530085DB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C180422CBFC530085DB06 /* Assets.xcassets */; };
 		0F5C180822CBFC530085DB06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C180622CBFC530085DB06 /* LaunchScreen.storyboard */; };
 		0F5C181322CBFC530085DB06 /* SavingFlippingVideosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C181222CBFC530085DB06 /* SavingFlippingVideosTests.swift */; };
@@ -29,7 +28,9 @@
 		0F5C184D22CBFD950085DB06 /* CameraSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C183622CBFD940085DB06 /* CameraSettings.swift */; };
 		0F5C184E22CBFD950085DB06 /* VideoComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C183722CBFD940085DB06 /* VideoComposition.swift */; };
 		0F5C185222CC01E30085DB06 /* AVAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C185122CC01E30085DB06 /* AVAuthorizer.swift */; };
-		0F5C185422CC02120085DB06 /* Authorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C185322CC02120085DB06 /* Authorizer.swift */; };
+		0F5C185D22CC05FC0085DB06 /* VideoCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C185C22CC05FC0085DB06 /* VideoCamera.storyboard */; };
+		0F5C185F22CC08FB0085DB06 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C185E22CC08FB0085DB06 /* CameraViewController.swift */; };
+		0F5C186122CC0D590085DB06 /* URL+Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C186022CC0D590085DB06 /* URL+Files.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 /* Begin PBXFileReference section */
 		0F5C17FA22CBFC4E0085DB06 /* SavingFlippingVideos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SavingFlippingVideos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5C17FD22CBFC4E0085DB06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0F5C180222CBFC4E0085DB06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F5C180422CBFC530085DB06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F5C180722CBFC530085DB06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F5C180922CBFC530085DB06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,7 +69,9 @@
 		0F5C183622CBFD940085DB06 /* CameraSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraSettings.swift; sourceTree = "<group>"; };
 		0F5C183722CBFD940085DB06 /* VideoComposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoComposition.swift; sourceTree = "<group>"; };
 		0F5C185122CC01E30085DB06 /* AVAuthorizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAuthorizer.swift; sourceTree = "<group>"; };
-		0F5C185322CC02120085DB06 /* Authorizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorizer.swift; sourceTree = "<group>"; };
+		0F5C185C22CC05FC0085DB06 /* VideoCamera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoCamera.storyboard; sourceTree = "<group>"; };
+		0F5C185E22CC08FB0085DB06 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		0F5C186022CC0D590085DB06 /* URL+Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Files.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +115,12 @@
 			children = (
 				0F5C181D22CBFD940085DB06 /* CameraKit */,
 				0F5C17FD22CBFC4E0085DB06 /* AppDelegate.swift */,
-				0F5C180122CBFC4E0085DB06 /* Main.storyboard */,
+				0F5C185E22CC08FB0085DB06 /* CameraViewController.swift */,
+				0F5C185C22CC05FC0085DB06 /* VideoCamera.storyboard */,
 				0F5C180422CBFC530085DB06 /* Assets.xcassets */,
 				0F5C180622CBFC530085DB06 /* LaunchScreen.storyboard */,
 				0F5C180922CBFC530085DB06 /* Info.plist */,
+				0F5C186022CC0D590085DB06 /* URL+Files.swift */,
 			);
 			path = SavingFlippingVideos;
 			sourceTree = "<group>";
@@ -189,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				0F5C182022CBFD940085DB06 /* CameraPermissions.swift */,
-				0F5C185322CC02120085DB06 /* Authorizer.swift */,
 				0F5C185122CC01E30085DB06 /* AVAuthorizer.swift */,
 			);
 			path = Permissions;
@@ -325,8 +328,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F5C180822CBFC530085DB06 /* LaunchScreen.storyboard in Resources */,
+				0F5C185D22CC05FC0085DB06 /* VideoCamera.storyboard in Resources */,
 				0F5C180522CBFC530085DB06 /* Assets.xcassets in Resources */,
-				0F5C180322CBFC4E0085DB06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,12 +348,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F5C183C22CBFD950085DB06 /* CameraController.swift in Sources */,
-				0F5C185422CC02120085DB06 /* Authorizer.swift in Sources */,
+				0F5C185F22CC08FB0085DB06 /* CameraViewController.swift in Sources */,
 				0F5C184622CBFD950085DB06 /* CameraPresenter.swift in Sources */,
 				0F5C184322CBFD950085DB06 /* BaseCameraViewController.swift in Sources */,
 				0F5C184E22CBFD950085DB06 /* VideoComposition.swift in Sources */,
 				0F5C184922CBFD950085DB06 /* VideoWriter.swift in Sources */,
 				0F5C185222CC01E30085DB06 /* AVAuthorizer.swift in Sources */,
+				0F5C186122CC0D590085DB06 /* URL+Files.swift in Sources */,
 				0F5C184022CBFD950085DB06 /* CameraPreviewView.swift in Sources */,
 				0F5C184C22CBFD950085DB06 /* DefaultCameraSettings.swift in Sources */,
 				0F5C184822CBFD950085DB06 /* CameraPresenterProtocol.swift in Sources */,
@@ -385,14 +389,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0F5C180122CBFC4E0085DB06 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0F5C180222CBFC4E0085DB06 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0F5C180622CBFC530085DB06 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

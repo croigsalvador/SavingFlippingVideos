@@ -18,7 +18,7 @@ extension AVCaptureDevice {
         } else {
             return nil
         }
-        camera?.activeVideoMinFrameDuration = CMTimeMake(1, 30)
+        camera?.activeVideoMinFrameDuration = CMTimeMake(value: 1, timescale: 30)
         return camera
     }
 

@@ -8,7 +8,6 @@
 
 import Foundation
 import AVKit
-import Alamofire
 
 typealias VideoResult = Result<URL,Error>
 
@@ -17,7 +16,7 @@ class VideoComposition: NSObject {
     func videoMix(of videoURLS:[URL], in outputURL:URL, with completion: @escaping (VideoResult) -> ()) {
     
         let composition = AVMutableComposition()
-        var currentTime = kCMTimeZero
+        var currentTime = CMTime.zero
         
         let compositionVideoTrack = composition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: CMPersistentTrackID())
         let compositionAudioTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: CMPersistentTrackID())
@@ -27,8 +26,8 @@ class VideoComposition: NSObject {
             
             guard  let assetVideoTrack = asset.tracks(withMediaType: AVMediaType.video).first,
                 let assetAudioTrack = asset.tracks(withMediaType: AVMediaType.audio).first,
-                let _ = try? compositionVideoTrack?.insertTimeRange(CMTimeRange(start: kCMTimeZero, duration: asset.duration), of: assetVideoTrack, at: currentTime),
-                let _ = try? compositionAudioTrack?.insertTimeRange(CMTimeRange(start: kCMTimeZero, duration: asset.duration), of: assetAudioTrack, at: currentTime)
+                let _ = try? compositionVideoTrack?.insertTimeRange(CMTimeRange(start: CMTime.zero, duration: asset.duration), of: assetVideoTrack, at: currentTime),
+                let _ = try? compositionAudioTrack?.insertTimeRange(CMTimeRange(start: CMTime.zero,  duration: asset.duration), of: assetAudioTrack, at: currentTime)
                 else {
                     continue
             }
@@ -40,8 +39,8 @@ class VideoComposition: NSObject {
         }
         
         let fileManager = FileManager.default
-        let start = CMTimeMake(0, 1)
-        let range = CMTimeRangeMake(start, composition.duration)
+        let start = CMTimeMake(value: 0, timescale: 1)
+        let range = CMTimeRangeMake(start: start, duration: composition.duration)
         
         let compatiblePresets = AVAssetExportSession.exportPresets(compatibleWith: composition)
         var preset: String = AVAssetExportPresetPassthrough
@@ -72,7 +71,7 @@ class VideoComposition: NSObject {
                 completion(VideoResult.failure(NSError.init(domain: "Error exporting file", code: 233, userInfo: nil)))
 
             default:
-                completion(VideoResult.success(nil))
+                completion(VideoResult.failure(NSError.init(domain: "Error exporting file", code: 233, userInfo: nil)))
             }
         }
     }

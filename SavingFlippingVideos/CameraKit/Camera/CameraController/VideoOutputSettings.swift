@@ -7,7 +7,7 @@
 //
 
 import AVFoundation
-import GPUImage
+//import GPUImage
 
 
 struct VideoOutputSettings {
@@ -34,9 +34,9 @@ struct VideoOutputSize {
     let height: CGFloat
     let width: CGFloat
     
-    var gpuImageSize: Size {
-        return Size(width: Float(self.width), height: Float(height))
-    }
+//    var gpuImageSize: Size {
+//        return Size(width: Float(self.width), height: Float(height))
+//    }
     
     static func vitcordVideoSize() -> VideoOutputSize {
         return VideoOutputSize(height: 768.0, width: 432.0)
