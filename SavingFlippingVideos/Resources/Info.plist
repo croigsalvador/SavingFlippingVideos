@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Create new Vits to be shared on Vitcord.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Permission required to upload and download videos on Vitcord.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Create new Vits to be shared on Vitcord</string>
 </dict>
 </plist>

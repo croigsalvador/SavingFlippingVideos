@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 
 final class CameraViewController: BaseCameraViewController {
     
@@ -40,17 +41,19 @@ final class CameraViewController: BaseCameraViewController {
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
+        presenter = CameraPresenter(view: self)
+    
         previewView = CameraPreviewView(frame: previewContainer.bounds)
         previewContainer.insertSubview(previewView, at: 0)
         
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
+        navigationController?.navigationBar.isHidden = true
         previewView.frame = previewContainer.bounds
 //        renderView.frame = previewContainer.bounds
     }
@@ -76,6 +79,15 @@ extension CameraViewController: CameraPresenterView {
             previewView.removeFromSuperview()
 //            previewContainer.insertSubview(renderView, at: 0)
         }
+    }
+    
+    func showVideo(url: URL) {
+        
+        let player = AVPlayer(url: url)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        navigationController?.navigationBar.isHidden = false
+        self.navigationController?.pushViewController(playerViewController, animated: true)
     }
 }
 

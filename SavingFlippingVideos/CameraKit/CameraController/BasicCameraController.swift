@@ -10,7 +10,7 @@ import AVFoundation
 
 
 final class BasicCameraController: NSObject, CameraController {
-
+    
     var currentDevice: AVCaptureDevice!
     var isRecording = false
     var canSwitchCameraWhileRecording = true
@@ -31,7 +31,6 @@ final class BasicCameraController: NSObject, CameraController {
     var session: AVCaptureSession? {
         return captureSession
     }
-    
     
     func setUp() {
         
@@ -64,9 +63,7 @@ final class BasicCameraController: NSObject, CameraController {
     
     // MARK: - Camera
     
-    func showCamera() {
-
-    }
+    func showCamera() {}
     
     func startRecording(completion: (() -> Void)?) {
         
@@ -100,12 +97,9 @@ final class BasicCameraController: NSObject, CameraController {
             self.videoWriter.finish { duration in
                 
                 let url = self.filePathUrl!
-                let isVideoValid = self.saveVideo(in: url, duration: duration)
+               
+                self.videoSaved(in: url)
                 
-                guard isVideoValid else {
-                    completion?(nil)
-                    return
-                }
                 completion?(url)
             }
         }

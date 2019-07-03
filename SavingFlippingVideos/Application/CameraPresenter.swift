@@ -15,8 +15,8 @@ class CameraPresenter: NSObject, CameraPresenterProtocol {
     
     weak var view: CameraPresenterView!
     fileprivate let cameraPermissions: CameraPermissions = CameraPermissions()
-    let queue = DispatchQueue(label: "com.vitcord.camera", attributes: [])
-    var cameraController: CameraController!
+    fileprivate let queue = DispatchQueue(label: "com.vitcord.camera", attributes: [])
+    fileprivate var cameraController: CameraController!
 
     
     // MARK: - Private
@@ -67,17 +67,11 @@ class CameraPresenter: NSObject, CameraPresenterProtocol {
     fileprivate func finishedRecording(url: URL) {
         
         cameraController.cleanUp()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1, execute: {
-            let duration = CMTimeGetSeconds(AVAsset(url: url).duration)
-            self.showPreviewViewController(url: url)
-        })
-    }
-    
-    fileprivate func showPreviewViewController(url: URL) {
+        DispatchQueue.main.async {
+            self.view.showVideo(url: url)
+        }
         
     }
-    
     
     // MARK: - Camera
     
@@ -118,13 +112,7 @@ class CameraPresenter: NSObject, CameraPresenterProtocol {
 //        showCamera()
 //    }
 
-    
-    // MARK: - Navigation
-    
-    func showPreview(at url: URL) {
-        showPreviewViewController(url: url)
-    }
-    
+
     func closeCamera() {
     
     }

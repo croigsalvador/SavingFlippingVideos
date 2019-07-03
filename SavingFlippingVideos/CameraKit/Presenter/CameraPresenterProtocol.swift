@@ -25,4 +25,5 @@ protocol CameraPresenterView: class {
     var presenter: CameraPresenter! { get set }
 //    var renderView: RenderView { get }
     func preview(session: AVCaptureSession?)
+    func showVideo(url: URL)
 }

@@ -21,7 +21,7 @@ class VideoWriter : NSObject {
     init(fileUrl:URL!, height: CGFloat, width: CGFloat){
         fileWriter = try? AVAssetWriter(outputURL: fileUrl, fileType: AVFileType.mp4)
             let videoOutputSettings: Dictionary<String, AnyObject> = [
-                AVVideoCodecKey : AVVideoCodecH264 as AnyObject,
+                AVVideoCodecKey : AVVideoCodecType.h264 as AnyObject,
                 AVVideoWidthKey : height as AnyObject,
                 AVVideoHeightKey : width as AnyObject
             ]
