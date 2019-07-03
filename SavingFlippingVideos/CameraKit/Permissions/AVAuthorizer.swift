@@ -43,7 +43,6 @@ struct AVAuthorizer {
 
   func requestAuthorization(_ fromHandler: @escaping (AVAuthorizationStatus)
     -> Void) {
-    let type = device as String == AVMediaType.video.rawValue ? "camera" : "microphone"
     let requestHandler = AVAuthorizer.createHandler(device, handler: fromHandler)
     AVCaptureDevice.requestAccess(for: AVMediaType(rawValue: device),
         completionHandler:requestHandler)

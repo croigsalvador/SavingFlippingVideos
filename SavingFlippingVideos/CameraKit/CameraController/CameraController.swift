@@ -89,12 +89,9 @@ extension CameraController {
             self.videoUrls = [URL]()
 
             switch result {
-                
             case .success(let url):
                 completion(url)
-                guard url != nil else { return }
                 self.cleanUp()
-                
             case .failure(_):
                 completion(nil)
             }

@@ -24,7 +24,7 @@ struct VideoOutputSettings {
     }
     
     static func vitcordVideoOutputSettings() -> VideoOutputSettings {
-        return VideoOutputSettings(videoCodecKey: AVVideoCodecH264,
+        return VideoOutputSettings(videoCodecKey: AVVideoCodecType.h264.rawValue,
                                    outputSize: VideoOutputSize.vitcordVideoSize())
     }
 }
