@@ -159,6 +159,8 @@ extension BasicCameraController: AVCaptureVideoDataOutputSampleBufferDelegate, A
 
         let isVideo = output is AVCaptureVideoDataOutput
         
+        print("🧐 Current frame Device \(currentDevice.localizedName)")
+        
         if isVideo {
             currentBuffer = sampleBuffer
         }

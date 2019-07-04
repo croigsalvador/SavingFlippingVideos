@@ -31,6 +31,16 @@
 		0F5C185D22CC05FC0085DB06 /* VideoCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C185C22CC05FC0085DB06 /* VideoCamera.storyboard */; };
 		0F5C185F22CC08FB0085DB06 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C185E22CC08FB0085DB06 /* CameraViewController.swift */; };
 		0F5C186122CC0D590085DB06 /* URL+Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C186022CC0D590085DB06 /* URL+Files.swift */; };
+		5B0D4A4A22CD01A200B5E754 /* TwoCamerasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D4A4922CD01A200B5E754 /* TwoCamerasViewController.swift */; };
+		5B0D4A4C22CD026200B5E754 /* TwoCamerasPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D4A4B22CD026200B5E754 /* TwoCamerasPresenter.swift */; };
+		5B0D4A6722CE182D00B5E754 /* AddVideoBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D4A6622CE182D00B5E754 /* AddVideoBlur.swift */; };
+		5B0D4A7122CE189000B5E754 /* AudioEffectModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D4A6922CE189000B5E754 /* AudioEffectModifier.swift */; };
+		5B0D4A7222CE189000B5E754 /* VideoAudioMixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D4A6A22CE189000B5E754 /* VideoAudioMixer.swift */; };
+		5B0D4A7322CE189000B5E754 /* AudioEffectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D4A6B22CE189000B5E754 /* AudioEffectFactory.swift */; };
+		5B0D4A7422CE189000B5E754 /* AudioEffectVideoComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D4A6C22CE189000B5E754 /* AudioEffectVideoComposer.swift */; };
+		5B0D4A7522CE189000B5E754 /* AudioExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D4A6D22CE189000B5E754 /* AudioExtractor.swift */; };
+		5B0D4A7622CE189000B5E754 /* AudioEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D4A6F22CE189000B5E754 /* AudioEffect.swift */; };
+		5B0D4A7722CE189000B5E754 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D4A7022CE189000B5E754 /* AudioRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +82,16 @@
 		0F5C185C22CC05FC0085DB06 /* VideoCamera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoCamera.storyboard; sourceTree = "<group>"; };
 		0F5C185E22CC08FB0085DB06 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		0F5C186022CC0D590085DB06 /* URL+Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Files.swift"; sourceTree = "<group>"; };
+		5B0D4A4922CD01A200B5E754 /* TwoCamerasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoCamerasViewController.swift; sourceTree = "<group>"; };
+		5B0D4A4B22CD026200B5E754 /* TwoCamerasPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoCamerasPresenter.swift; sourceTree = "<group>"; };
+		5B0D4A6622CE182D00B5E754 /* AddVideoBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddVideoBlur.swift; path = "../../../iOS/Vitcord/Services/VideoComposition/Video Processing/AddVideoBlur.swift"; sourceTree = "<group>"; };
+		5B0D4A6922CE189000B5E754 /* AudioEffectModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEffectModifier.swift; sourceTree = "<group>"; };
+		5B0D4A6A22CE189000B5E754 /* VideoAudioMixer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAudioMixer.swift; sourceTree = "<group>"; };
+		5B0D4A6B22CE189000B5E754 /* AudioEffectFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEffectFactory.swift; sourceTree = "<group>"; };
+		5B0D4A6C22CE189000B5E754 /* AudioEffectVideoComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEffectVideoComposer.swift; sourceTree = "<group>"; };
+		5B0D4A6D22CE189000B5E754 /* AudioExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioExtractor.swift; sourceTree = "<group>"; };
+		5B0D4A6F22CE189000B5E754 /* AudioEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEffect.swift; sourceTree = "<group>"; };
+		5B0D4A7022CE189000B5E754 /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +133,8 @@
 		0F5C17FC22CBFC4E0085DB06 /* SavingFlippingVideos */ = {
 			isa = PBXGroup;
 			children = (
+				5B0D4A6822CE189000B5E754 /* AudioProcessing */,
+				0F5C185B22CC02AA0085DB06 /* Composition */,
 				0F5C181D22CBFD940085DB06 /* CameraKit */,
 				0F5C186422CC92C70085DB06 /* Application */,
 				0F5C186022CC0D590085DB06 /* URL+Files.swift */,
@@ -143,17 +165,8 @@
 				0F5C185922CC028E0085DB06 /* VideoWriter */,
 				0F5C185822CC02820085DB06 /* Session */,
 				0F5C185A22CC029A0085DB06 /* Device */,
-				0F5C185B22CC02AA0085DB06 /* Composition */,
-				0F5C181F22CBFD940085DB06 /* Camera */,
 			);
 			path = CameraKit;
-			sourceTree = "<group>";
-		};
-		0F5C181F22CBFD940085DB06 /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Camera;
 			sourceTree = "<group>";
 		};
 		0F5C182122CBFD940085DB06 /* CameraController */ = {
@@ -238,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5C183722CBFD940085DB06 /* VideoComposition.swift */,
+				5B0D4A6622CE182D00B5E754 /* AddVideoBlur.swift */,
 			);
 			path = Composition;
 			sourceTree = "<group>";
@@ -255,11 +269,51 @@
 		0F5C186422CC92C70085DB06 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				0F5C182E22CBFD940085DB06 /* CameraPresenter.swift */,
-				0F5C185E22CC08FB0085DB06 /* CameraViewController.swift */,
+				5B0D4A4822CD007800B5E754 /* TwoCameras */,
+				5B0D4A4722CD004B00B5E754 /* OneCamera */,
 				0F5C185C22CC05FC0085DB06 /* VideoCamera.storyboard */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		5B0D4A4722CD004B00B5E754 /* OneCamera */ = {
+			isa = PBXGroup;
+			children = (
+				0F5C182E22CBFD940085DB06 /* CameraPresenter.swift */,
+				0F5C185E22CC08FB0085DB06 /* CameraViewController.swift */,
+			);
+			path = OneCamera;
+			sourceTree = "<group>";
+		};
+		5B0D4A4822CD007800B5E754 /* TwoCameras */ = {
+			isa = PBXGroup;
+			children = (
+				5B0D4A4922CD01A200B5E754 /* TwoCamerasViewController.swift */,
+				5B0D4A4B22CD026200B5E754 /* TwoCamerasPresenter.swift */,
+			);
+			path = TwoCameras;
+			sourceTree = "<group>";
+		};
+		5B0D4A6822CE189000B5E754 /* AudioProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				5B0D4A6922CE189000B5E754 /* AudioEffectModifier.swift */,
+				5B0D4A6A22CE189000B5E754 /* VideoAudioMixer.swift */,
+				5B0D4A6B22CE189000B5E754 /* AudioEffectFactory.swift */,
+				5B0D4A6C22CE189000B5E754 /* AudioEffectVideoComposer.swift */,
+				5B0D4A6D22CE189000B5E754 /* AudioExtractor.swift */,
+				5B0D4A6E22CE189000B5E754 /* Effects */,
+				5B0D4A7022CE189000B5E754 /* AudioRecorder.swift */,
+			);
+			path = AudioProcessing;
+			sourceTree = "<group>";
+		};
+		5B0D4A6E22CE189000B5E754 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				5B0D4A6F22CE189000B5E754 /* AudioEffect.swift */,
+			);
+			path = Effects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +419,9 @@
 			files = (
 				0F5C183C22CBFD950085DB06 /* CameraController.swift in Sources */,
 				0F5C185F22CC08FB0085DB06 /* CameraViewController.swift in Sources */,
+				5B0D4A6722CE182D00B5E754 /* AddVideoBlur.swift in Sources */,
+				5B0D4A4C22CD026200B5E754 /* TwoCamerasPresenter.swift in Sources */,
+				5B0D4A7222CE189000B5E754 /* VideoAudioMixer.swift in Sources */,
 				0F5C184622CBFD950085DB06 /* CameraPresenter.swift in Sources */,
 				0F5C184322CBFD950085DB06 /* BaseCameraViewController.swift in Sources */,
 				0F5C184E22CBFD950085DB06 /* VideoComposition.swift in Sources */,
@@ -375,14 +432,21 @@
 				0F5C184C22CBFD950085DB06 /* DefaultCameraSettings.swift in Sources */,
 				0F5C184822CBFD950085DB06 /* CameraPresenterProtocol.swift in Sources */,
 				0F5C183D22CBFD950085DB06 /* BasicCameraController.swift in Sources */,
+				5B0D4A4A22CD01A200B5E754 /* TwoCamerasViewController.swift in Sources */,
 				0F5C184422CBFD950085DB06 /* PresenterProtocol.swift in Sources */,
 				0F5C184D22CBFD950085DB06 /* CameraSettings.swift in Sources */,
 				0F5C183A22CBFD950085DB06 /* CameraPermissions.swift in Sources */,
+				5B0D4A7122CE189000B5E754 /* AudioEffectModifier.swift in Sources */,
+				5B0D4A7322CE189000B5E754 /* AudioEffectFactory.swift in Sources */,
 				0F5C183E22CBFD950085DB06 /* VideoOutputSettings.swift in Sources */,
 				0F5C184A22CBFD950085DB06 /* AVCaptureSession.swift in Sources */,
 				0F5C17FE22CBFC4E0085DB06 /* AppDelegate.swift in Sources */,
+				5B0D4A7722CE189000B5E754 /* AudioRecorder.swift in Sources */,
+				5B0D4A7622CE189000B5E754 /* AudioEffect.swift in Sources */,
 				0F5C184B22CBFD950085DB06 /* AVCaptureDevice.swift in Sources */,
+				5B0D4A7522CE189000B5E754 /* AudioExtractor.swift in Sources */,
 				0F5C183B22CBFD950085DB06 /* FilterCameraController.swift in Sources */,
+				5B0D4A7422CE189000B5E754 /* AudioEffectVideoComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

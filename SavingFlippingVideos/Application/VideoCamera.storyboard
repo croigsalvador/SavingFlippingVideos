@@ -50,6 +50,7 @@
                                                 <state key="normal" image="close_white"/>
                                                 <connections>
                                                     <action selector="closeButtonPressed:" destination="aXG-TJ-kyd" eventType="touchUpInside" id="zG1-Ro-9NH"/>
+                                                    <segue destination="AC7-A6-wAA" kind="show" id="NP9-Qs-UxS"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -104,14 +105,27 @@
             </objects>
             <point key="canvasLocation" x="1439.1304347826087" y="-8.9673913043478262"/>
         </scene>
-        <!--View Controller-->
+        <!--Two Cameras View Controller-->
         <scene sceneID="KjS-U1-oh7">
             <objects>
-                <viewController id="i6S-ec-l4t" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TwoCamerasViewController" id="i6S-ec-l4t" customClass="TwoCamerasViewController" customModule="SavingFlippingVideos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2I0-2G-8VT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-Lj-tl8">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUm-Gd-QIH">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="335"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4O-En-qjS">
+                                        <rect key="frame" x="0.0" y="337" width="414" height="335"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sb7-71-JbK">
                                 <rect key="frame" x="162" y="585" width="90" height="95"/>
                                 <color key="backgroundColor" red="0.69220703120000004" green="0.1114146292" blue="0.1721043626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,23 +136,33 @@
                                 </constraints>
                                 <state key="normal" image="rec_btn"/>
                                 <connections>
-                                    <action selector="recordButtonTouchDown:" destination="aXG-TJ-kyd" eventType="touchDown" id="bej-tI-w0X"/>
-                                    <action selector="recordButtonTouchUp:" destination="aXG-TJ-kyd" eventType="touchUpInside" id="BFh-d0-C0s"/>
-                                    <action selector="recordButtonTouchUpOutside:" destination="aXG-TJ-kyd" eventType="touchUpOutside" id="dEH-A1-K9a"/>
+                                    <action selector="recordButtonTouchDown:" destination="i6S-ec-l4t" eventType="touchDown" id="Lc8-KR-bbY"/>
+                                    <action selector="recordButtonTouchUp:" destination="i6S-ec-l4t" eventType="touchUpInside" id="UTj-Cv-ryL"/>
+                                    <action selector="recordButtonTouchUpOutside:" destination="i6S-ec-l4t" eventType="touchUpOutside" id="jAC-7k-CQ1"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="oMU-Lj-tl8" firstAttribute="leading" secondItem="rCx-Q3-qiC" secondAttribute="leading" id="7z7-8k-IPQ"/>
                             <constraint firstItem="Sb7-71-JbK" firstAttribute="centerX" secondItem="rCx-Q3-qiC" secondAttribute="centerX" id="8mt-ey-oM1"/>
+                            <constraint firstItem="rCx-Q3-qiC" firstAttribute="bottom" secondItem="oMU-Lj-tl8" secondAttribute="bottom" id="O58-Ln-EFE"/>
+                            <constraint firstItem="rCx-Q3-qiC" firstAttribute="trailing" secondItem="oMU-Lj-tl8" secondAttribute="trailing" id="bea-iL-ks4"/>
                             <constraint firstItem="rCx-Q3-qiC" firstAttribute="bottom" secondItem="Sb7-71-JbK" secondAttribute="bottom" constant="56" id="h9Q-vq-UJw"/>
+                            <constraint firstItem="oMU-Lj-tl8" firstAttribute="top" secondItem="rCx-Q3-qiC" secondAttribute="top" id="i5g-av-eNl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rCx-Q3-qiC"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fQc-4c-CWp"/>
+                    <connections>
+                        <outlet property="bottomPreviewContainer" destination="D4O-En-qjS" id="LCC-U2-ACy"/>
+                        <outlet property="recordButton" destination="Sb7-71-JbK" id="6P0-uA-pL1"/>
+                        <outlet property="topPreviewContainer" destination="tUm-Gd-QIH" id="uCj-o2-GBx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJa-9z-il7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2123.1884057971015" y="-7.3369565217391308"/>
+            <point key="canvasLocation" x="1955.072463768116" y="752.44565217391312"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1I2-4A-Hp5">
@@ -157,6 +181,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spI-Ln-p8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="531.8840579710145" y="-8.9673913043478262"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TvK-Kp-UhP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AC7-A6-wAA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Up8-8g-cK6">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i6S-ec-l4t" kind="relationship" relationship="rootViewController" id="Rxe-rD-dEl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3GE-fI-heu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="752.44565217391312"/>
         </scene>
     </scenes>
     <resources>
